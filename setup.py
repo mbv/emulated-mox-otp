@@ -23,7 +23,7 @@ setup(
         description='Command line tool to query MOX CPU read-only OTP device',
         long_description=get_description('README.md'),
         long_description_content_type='text/markdown',
-        url='https://gitlab.labs.nic.cz/turris/mox-otp/',
+        url='https://github.com/mbv/emulated-mox-otp/',
         author='CZ.NIC, z.s.p.o.',
         author_email='packaging@turris.cz',
         license='GNU GPL v3',

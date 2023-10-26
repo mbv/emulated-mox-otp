@@ -9,7 +9,7 @@ from .checks import check_mac, check_serial, check_pubkey
 from .exceptions import MoxOtpApiError, MoxOtpSetupError, MoxOtpUsageError
 from .helpers import errprint, first_line_of_file, hash_type
 
-from .__init__ import MAC_PATH, PUBKEY_PATH, SERIAL_PATH, SIGN_PATH
+from .__init__ import MAC_PATH, PUBKEY_PATH, SERIAL_PATH
 
 # number of bytes to read at once
 CHUNK_SIZE = 1024
@@ -31,15 +31,8 @@ def count_hash_from_file(f):
 def sign_hash(h):
     """h must be bytes processed with HASH_TYPE algorithm
     """
-    try:
-        with open(SIGN_PATH, "wb") as s:
-            s.write(h)
-        with open(SIGN_PATH, "rb") as s:
-            sig = s.read(MAX_SIGNATURE_LENGTH)
-    except (FileNotFoundError, PermissionError):
-        raise MoxOtpApiError("Could not find MOX sign file")
 
-    return sig[2:68] + sig[70:]
+    return h
 
 
 @check_serial

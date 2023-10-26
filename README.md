@@ -1,4 +1,7 @@
-# MOX OTP
+# Emulated MOX OTP
+
+Emulate interface of MOX CPU cryptographic device (called OTP), just using router fs
+
 
 Python library to query MOX CPU cryptographic device (called OTP).
 
